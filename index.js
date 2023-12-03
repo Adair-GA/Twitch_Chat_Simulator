@@ -46,7 +46,12 @@ const comentariosDePersecucion = [
     "OmegaOutlaw"
   ];
 
+let x = false;
+
 setInterval(() => {
+    if (x) {
+      return;
+    }
     const comentario = comentariosDePersecucion[Math.floor(Math.random() * comentariosDePersecucion.length)];
     const usuario = gamerNames[Math.floor(Math.random() * gamerNames.length)];
     const c = document.createElement("div");
@@ -68,7 +73,7 @@ setInterval(() => {
     var objDiv = document.getElementById("message-list");
     objDiv.scrollTop = objDiv.scrollHeight;
 
-}, 1000);
+}, 1500);
 
 function getRandomColor() {
     const letters = "0123456789ABCDEF";
@@ -80,5 +85,7 @@ function getRandomColor() {
 }
 
 
-
+function stop_chat(){
+    x = !x;
+}
   
